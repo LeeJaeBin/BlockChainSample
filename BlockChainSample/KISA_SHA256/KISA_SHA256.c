@@ -196,7 +196,7 @@ void SHA256_Close( OUT SHA256_INFO *Info, IN BYTE *pszDigest )
 		BIG_D2B((Info->uChainVar)[i / 4], &(pszDigest[i]));
 }
 
-void SHA256_Encrpyt( IN const BYTE *pszMessage, IN UINT uPlainTextLen, OUT BYTE *pszDigest )
+void SHA256_Encrypt( IN const BYTE *pszMessage, IN UINT uPlainTextLen, OUT BYTE *pszDigest )
 {
 	SHA256_INFO info;
 

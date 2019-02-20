@@ -36,7 +36,7 @@ int main()
 		Block[total].transactionCount = Block[total - 1].transactionCount + 1;
 
 		Block[total].blockSize = strlen((char*)Block[total].transaction);
-		SHA256_Encrpyt(Block[total - 1].transaction, Block[total - 1].blockSize , Block[total].header.previousBlockHash);
+		SHA256_Encrypt(Block[total - 1].transaction, Block[total - 1].blockSize , Block[total].header.previousBlockHash);
 		total++;
 	}
 
@@ -51,11 +51,11 @@ int main()
 		else if (select == 1) {
 			int i;
 
-			printf("\n번호 선택(2~9)");
+			printf("\n번호 선택(1~9)");
 			scanf("%d", &select);
 
 			BYTE EncryptCheck[257];
-			SHA256_Encrpyt(Block[select - 1].transaction, Block[select - 1].blockSize, EncryptCheck);
+			SHA256_Encrypt(Block[select - 1].transaction, Block[select - 1].blockSize, EncryptCheck);
 
 			for (i = 0; i < 256; i++) {
 				if (Block[select].header.previousBlockHash[i] != EncryptCheck[i]) {
@@ -70,7 +70,7 @@ int main()
 			}
 		}
 		else if (select == 2) {
-			printf("\n번호 선택(2~9)");
+			printf("\n번호 선택(1~9)");
 			scanf("%d", &select);
 
 			Block[select - 1].transaction[0] = (BYTE)"\0";

@@ -92,7 +92,7 @@ void SHA256_Close( OUT SHA256_INFO *Info, OUT BYTE *pszDigest );
 @param pszDigest : 암호문
 @remarks 내부적으로 SHA256_Init, SHA256_Process, SHA256_Close를 호출한다.
 */
-void SHA256_Encrpyt( IN const BYTE *pszMessage, IN UINT uPlainTextLen, OUT BYTE *pszDigest );
+void SHA256_Encrypt( IN const BYTE *pszMessage, IN UINT uPlainTextLen, OUT BYTE *pszDigest );
 
 #ifdef  __cplusplus
 }
